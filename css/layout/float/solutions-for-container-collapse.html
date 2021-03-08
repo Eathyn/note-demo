@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>solution for container collapse</title>
+  <style>
+    .container {
+      width: 200px;
+      border: 1px solid darkred;
+    }
+
+    .float {
+      width: 100px;
+      height: 100px;
+      margin: 10px;
+      background-color: cornflowerblue;
+      float: left;
+    }
+
+    /* solution one */
+    .container::after {
+      content: "";
+      clear: both;
+      display: block;
+    }
+
+    /* solution two */
+    .container {
+      overflow: auto;
+    }
+
+    /* solution three */
+    .container {
+      display: flow-root;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="float"></div>
+  </div>
+</body>
+</html>
